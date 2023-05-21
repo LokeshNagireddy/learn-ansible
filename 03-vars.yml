@@ -47,3 +47,13 @@
       ansible.builtin.debug:
         msg: "{{ output }}"
 
+## Demo on Register variables - Reading desired values
+- name: Demo on Register variables
+  hosts: all
+  tasks:
+    - name: Run uptime shell command
+      ansible.builtin.shell: uptime
+      register: output
+    - name: Display Output.stdout
+      ansible.builtin.debug:
+        msg: "{{ output.stdout }}"
