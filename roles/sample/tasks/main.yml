@@ -8,4 +8,4 @@
 
 - name: Print variable of play in role
   ansible.builtin.debug:
-    msg: URL_PLAY - {{ URL_PAY }}
+    msg: URL_PLAY - {{ URL_PLAY }}
