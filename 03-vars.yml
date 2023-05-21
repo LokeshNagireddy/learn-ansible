@@ -21,7 +21,7 @@
 ## Demo load vars from a file
 - name: Demo on Load Variables From a File
   hosts: all
-  vars_file:
+  vars_files:
     - exvars.yml
   tasks:
     - name: Print URL
