@@ -9,12 +9,12 @@
         msg: URL - {{ URL_A }}
 
 #Demo on task level variable
-- name: Variable demo
+- name: Variable demo task level
   hosts: all
   tasks:
     - name: Print URL
       ansible.builtin.debug:
         msg: URL - {{ URL }}
-    - vars:
+      vars:
         URL: play1.example.com
 
