@@ -35,3 +35,10 @@
     URL_PLAY: role.example.com
   roles:
     - sample
+
+#Demo on Register variables
+- name: Register Variables
+  hosts: all
+  tasks:
+    - name: Run uptime shell command
+      ansible.builtin.shell: uptime
