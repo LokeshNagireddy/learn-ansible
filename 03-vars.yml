@@ -1,5 +1,5 @@
-## Demo Variable print task
-- name: Demo on Play level Variables
+#Demo on printing a variable
+- name: Variable demo
   hosts: all
   vars:
     URL: play.example.com
@@ -8,52 +8,3 @@
       ansible.builtin.debug:
         msg: URL - {{ URL }}
 
-## Demo inline vars task
-- name: Demo on Task level Variables
-  hosts: all
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL - {{ URL }}
-      vars:
-        URL: tasks.example.com
-
-## Demo load vars from a file
-- name: Demo on Load Variables From a File
-  hosts: all
-  vars_files:
-    - exvars.yml
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL - {{ URL }}
-
-## Demo load vars from a role
-- name: Demo on Variables From a Role
-  hosts: all
-  vars:
-    URL_PLAY: play1.example.com
-  roles:
-    - sample
-
-## Demo on Register variables
-- name: Demo on Register variables
-  hosts: all
-  tasks:
-    - name: Run uptime shell command
-      ansible.builtin.shell: uptime
-      register: output
-    - name: Display Output
-      ansible.builtin.debug:
-        msg: "{{ output }}"
-
-## Demo on Register variables - Reading desired values
-- name: Demo on Register variables
-  hosts: all
-  tasks:
-    - name: Run uptime shell command
-      ansible.builtin.shell: uptime
-      register: output
-    - name: Display Output.stdout
-      ansible.builtin.debug:
-        msg: "{{ output.stdout }}"
