@@ -18,3 +18,12 @@
       vars:
         URL: play1.example.com
 
+#Demo on variables - Load from a file
+- name: Variable demo - load from a file
+  hosts: all
+  vars_files:
+    - exvars.yml
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
