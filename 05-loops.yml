@@ -15,4 +15,3 @@
         loop:
           - {name: apple, quantity: 10}
           - {name: banana, quantity: 20}
-
